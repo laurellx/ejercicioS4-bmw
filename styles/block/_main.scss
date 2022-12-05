@@ -1,0 +1,166 @@
+main {
+    @include flex(column, 0, center);
+    flex-wrap: wrap;
+    .sections-wrapper {
+        @include flex(column, space-between, 0);
+        width: 60%;
+        padding: 10px;
+        gap: 100px;
+        nav {
+            p {
+                width: fit-content;
+                font-size: 13px;
+                font-weight: 550;
+                color: lightgray;
+                margin-top: 20px;
+                padding: 10px 20px;
+                border-bottom: 3px solid #FBFBFB;
+
+            }
+            .main__nav--titles {
+                @include flex(0, space-between, center);
+                li {
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: lightgrey;
+                    display: flex;
+                    padding: 20px;
+                    border-bottom: 3px solid #FBFBFB;
+                    &:hover {
+                        font-size: 20px;
+                        font-weight: bolder;
+                        color: black;
+                        border-bottom: 3px solid #3f7fe7;
+                    }
+                } 
+            }
+        }
+        .main__section--cards {
+            @include flex(0, space-between, 0);
+            flex-wrap: wrap;
+            .card {
+                width: 200px;
+                padding: 10px;
+                h4 {
+                    color: lightgray;
+                    margin-bottom: 20px;
+                }
+                img {
+                    width: 250px;
+                    max-width: 100%;
+                    height: auto; 
+                }
+            }
+        }
+        .main__section--cards2 {
+            @include flex(0, space-between, 0);
+            flex-wrap: wrap;
+            .card2 {
+                width: 200px;
+                border: 1px solid lightgray;
+                padding: 10px;
+                h2 {
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: small;
+                    color: gray;
+                    flex-wrap: wrap;
+                    margin-bottom: 10px;
+                }
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    margin: auto;
+                }
+            }
+        }
+        .main__section--cards3 {
+            @include flex(0, space-between, 0);
+            .card3 {
+                border: 1px solid lightgray;
+                max-width: 100%;
+                height: auto;
+                padding: 10px;
+                gap: 10px;
+                h2 {
+                    margin-bottom: 10px;
+                }
+                img {
+                    width: 450px;
+                    max-width: 100%;
+                    height: auto; 
+                }
+            }
+        }
+     }
+        
+        .main__div--icons {
+            @include flex(0, space-between, center);
+            padding: 30px 0;
+            li {
+                @include flex(column, center, center);
+                color: grey;
+                font-weight: bold;
+                font-size: 10px;
+                background-color: lightgray;
+                padding: 50px;
+                width: 170px;
+                height: 20px;
+                margin: 5px;
+                line-height: 20px;
+            }
+        }
+    }
+    .main__section--columns {
+        @include flex(0, center, top);
+        background-color: lightgray;
+        width: 100%;
+        height: 400px;
+        padding-top: 80px;
+        gap: 10%;
+        flex-wrap: wrap;
+        &::before {
+            content: "";
+            background-color: grey;
+            width: 60%;
+            height: 1px;
+            display: flex;
+        }
+        .columns-container {
+            @include flex(0, space-between, 0);
+            width: 60%;
+            font-weight: bold;
+            font-size: small;
+            .column {
+                @include flex(column, flex-start, 0);
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    li {
+                        @include flex(column, 0, 0);
+                        color: grey;
+                        margin: 4px;
+                        h1 {
+                            color: black;
+                            margin-bottom: 25px;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+
+
+*span {
+    display: flex;
+    font-size: smaller;
+    &:not(.exception-span) {
+            font-weight: bold;
+    }
+        &::before {
+            content: ">";
+            color: gray;
+            font-size: 15px;
+        }
+}
